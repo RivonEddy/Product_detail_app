@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Image, Text, View } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Feather from '@expo/vector-icons/Feather';
 import {TouchableOpacity } from 'react-native-gesture-handler';
 
 const Detail = (props) => {
+
+        //creating the usestate boolean for switching buttons
+        const [switchButton, setSwitchButton] = useState(false);
+
+        //creating the toggle function that switches the button
+        const toggleSwitch = () => {
+            setSwitchButton(!switchButton); //toggle for switching buttons
+            
+        }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -19,11 +29,11 @@ const Detail = (props) => {
             <Text style={styles.subtitle}>Model S1</Text>
             <View style={styles.cont2}>
                 <Text style={{ ...styles.title, flex: 2, marginTop: 0 }}>Colors</Text>
-                <View style={styles.selected}>
+                <TouchableOpacity style={styles.selected}>
                     <View style={styles.c1} />
-                </View>
-            <View style={styles.c2} />
-            <View style={styles.c3} />
+                </TouchableOpacity>
+            <TouchableOpacity style={styles.c2} />
+            <TouchableOpacity style={styles.c3} />
             </View>
             <Text style={styles.text}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -87,20 +97,22 @@ const styles = StyleSheet.create({
         height: 20,
         width: 20,
         borderRadius: 15,
-        backgroundColor: "#529cc0"
+        backgroundColor: "#529cc0",
+        marginHorizontal: 5
     },
     c2:{
         height: 20,
         width: 20,
         borderRadius: 15,
         backgroundColor: "#529c47",
-        marginHorizontal: 10
+        marginHorizontal: 5
     },
     c1:{
         height: 20,
         width: 20,
         borderRadius: 15,
-        backgroundColor: "#e2443b"
+        backgroundColor: "#e2443b",
+        marginHorizontal: 5
     },
     selected:{
         borderColor: "#e2443b",
