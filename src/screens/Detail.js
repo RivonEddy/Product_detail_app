@@ -7,13 +7,13 @@ import {TouchableOpacity } from 'react-native-gesture-handler';
 const Detail = (props) => {
 
         //creating the usestate boolean for switching buttons
-        const [switchButton, setSwitchButton] = useState(false);
+        // const [switchButton, setSwitchButton] = useState(false);
 
         //creating the toggle function that switches the button
-        const toggleSwitch = () => {
-            setSwitchButton(!switchButton); //toggle for switching buttons
+        // const toggleSwitch = () => {
+        //     setSwitchButton(!switchButton); //toggle for switching buttons
             
-        }
+        // }
 
     return (
         <View style={styles.container}>
